@@ -213,7 +213,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$logo$2e$
 var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$search$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$search$2e$png__$5b$ssr$5d$__$28$static$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_import__('[project]/public/images/search.png.mjs { IMAGE => "[project]/public/images/search.png [ssr] (static)" } [ssr] (structured image object, ecmascript)');
 var __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__ = __turbopack_import__("[externals]/react [external] (react, cjs)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/navigation.js [ssr] (ecmascript)");
-'use client';
+"use client";
 ;
 ;
 ;
@@ -224,8 +224,17 @@ const SearchContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$exter
 const Header = ()=>{
     const [search, setSearch] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])("");
     const route = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
+    const [user, setUser] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(null);
+    const [showPopup, setShowPopup] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false); // Popup visibility state
+    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
+        const user = localStorage.getItem("user");
+        if (user) {
+            const userData = JSON.parse(user);
+            setUser(userData);
+        }
+    }, []);
     function handleLogoClick() {
-        route.push('/'); // Redirect to the home page
+        route.push("/"); // Redirect to the home page
     }
     function searchImgClick() {
         if (search !== "") {
@@ -236,89 +245,138 @@ const Header = ()=>{
             console.log("error");
         }
     }
+    const handleLogout = ()=>{
+        localStorage.removeItem("user");
+        setUser(null);
+        route.push("/");
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(SearchContext.Provider, {
         value: search,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-            className: "flex items-center p-5 sm:px-10 md:px-20 lg:px-32 xl:px-72 justify-between  bg-gradient-to-tr from-zinc-50 from-50% via-zinc-500 to-100% ",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                    className: "flex gap-4 font-bold items-center justify-center ",
-                    onClick: handleLogoClick,
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                            src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$logo$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$logo$2e$png__$5b$ssr$5d$__$28$static$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
-                            height: 50,
-                            width: 50,
-                            alt: "...",
-                            className: "h-8 md:h-14  "
-                        }, void 0, false, {
-                            fileName: "[project]/app/components/Header.tsx",
-                            lineNumber: 37,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
-                            className: "xl:text-3xl lg:text-2xl md:text-xl hidden md:block font-bold",
-                            children: "Movie Explorer"
-                        }, void 0, false, {
-                            fileName: "[project]/app/components/Header.tsx",
-                            lineNumber: 39,
-                            columnNumber: 21
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/components/Header.tsx",
-                    lineNumber: 36,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                    className: "flex p-5 border-black gap-3 lg:gap-5",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
-                            className: "rounded-lg border-2 border-solid w-36 lg:w-max border-black p-2 xl:p-3",
-                            placeholder: "search for movie",
-                            type: "text",
-                            value: search,
-                            onChange: (event)=>setSearch(event.target.value),
-                            required: true
-                        }, void 0, false, {
-                            fileName: "[project]/app/components/Header.tsx",
-                            lineNumber: 44,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                            onClick: searchImgClick,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                className: "cursor-pointer",
-                                src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$search$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$search$2e$png__$5b$ssr$5d$__$28$static$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
-                                height: 25,
-                                width: 25,
-                                alt: "..."
+            className: "bg-gradient-to-tr from-zinc-50 from-50% via-zinc-500 to-100%",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                className: "flex container mx-auto items-center justify-between",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                        className: "flex gap-4 font-bold items-center justify-center",
+                        onClick: handleLogoClick,
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$logo$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$logo$2e$png__$5b$ssr$5d$__$28$static$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+                                height: 50,
+                                width: 50,
+                                alt: "...",
+                                className: "h-8 md:h-14"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Header.tsx",
-                                lineNumber: 49,
-                                columnNumber: 25
+                                lineNumber: 62,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
+                                className: "xl:text-3xl lg:text-2xl md:text-xl hidden md:block font-bold",
+                                children: "Movie Explorer"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/Header.tsx",
+                                lineNumber: 69,
+                                columnNumber: 13
                             }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/app/components/Header.tsx",
-                            lineNumber: 48,
-                            columnNumber: 21
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/components/Header.tsx",
-                    lineNumber: 42,
-                    columnNumber: 17
-                }, this)
-            ]
-        }, void 0, true, {
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/Header.tsx",
+                        lineNumber: 58,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                        className: "grid grid-flow-col p-5 border-black gap-3 lg:gap-5",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
+                                className: "rounded-lg border-2 border-solid w-36 lg:w-max border-black p-2 xl:p-3",
+                                placeholder: "search for movie",
+                                type: "text",
+                                value: search,
+                                onChange: (event)=>setSearch(event.target.value),
+                                required: true
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/Header.tsx",
+                                lineNumber: 75,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
+                                onClick: searchImgClick,
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    className: "cursor-pointer",
+                                    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$search$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$search$2e$png__$5b$ssr$5d$__$28$static$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+                                    height: 25,
+                                    width: 25,
+                                    alt: "..."
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/Header.tsx",
+                                    lineNumber: 85,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/Header.tsx",
+                                lineNumber: 84,
+                                columnNumber: 13
+                            }, this),
+                            user && user.isAdmin ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                    className: "w-12 h-12 bg-blue-500 text-white flex items-center justify-center rounded-full text-xl font-semibold cursor-pointer",
+                                    onClick: ()=>setShowPopup(!showPopup),
+                                    children: "Ad"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/Header.tsx",
+                                    lineNumber: 96,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                    className: "w-12 h-12 bg-blue-500 text-white flex items-center justify-center rounded-full text-xl font-semibold cursor-pointer",
+                                    onClick: ()=>setShowPopup(!showPopup),
+                                    children: user?.name.slice(0, 2)
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/Header.tsx",
+                                    lineNumber: 105,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false),
+                            showPopup && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                className: "  bg-white border shadow-lg p-4 rounded-md",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                    onClick: handleLogout,
+                                    className: "cursor-pointer text-red-500 text-sm font-semibold",
+                                    children: "Logout"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/components/Header.tsx",
+                                    lineNumber: 115,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/Header.tsx",
+                                lineNumber: 114,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/Header.tsx",
+                        lineNumber: 74,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/components/Header.tsx",
+                lineNumber: 57,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
             fileName: "[project]/app/components/Header.tsx",
-            lineNumber: 32,
-            columnNumber: 13
+            lineNumber: 56,
+            columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/components/Header.tsx",
-        lineNumber: 31,
-        columnNumber: 9
+        lineNumber: 55,
+        columnNumber: 5
     }, this);
 };
 const __TURBOPACK__default__export__ = Header;
@@ -644,7 +702,8 @@ const MovieCard = ({ data })=>{
         fetchCategoryTitles();
         fetchFavirates();
     }, [
-        categories
+        categories,
+        movie_id
     ]);
     const CardClickFun = (id)=>{
         route.push(`movie/${id}`);
@@ -1183,24 +1242,26 @@ const Catagory = ({ viewAll })=>{
     const [categoryLimit, setCategoryLimit] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(11);
     const [categories, setCategories] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])([]); // Initialize as empty array
     const route = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
+    const url = ("TURBOPACK compile-time value", "http://localhost:8000");
     (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
         const fetchCategories = async ()=>{
             try {
-                const response = await __TURBOPACK__imported__module__$5b$externals$5d2f$axios__$5b$external$5d$__$28$axios$2c$__esm_import$29$__["default"].get('http://localhost:8000/category');
+                const response = await __TURBOPACK__imported__module__$5b$externals$5d2f$axios__$5b$external$5d$__$28$axios$2c$__esm_import$29$__["default"].get(`${url}/category`);
                 setCategories(response.data);
             } catch (error) {
                 console.error("Error fetching categories:", error);
-            // Handle the error (e.g., display an error message)
             }
         };
-        fetchCategories(); // Call the function to fetch data
-    }, []);
+        fetchCategories();
+    }, [
+        url
+    ]);
     const viewMoreFun = ()=>{
         setViewMore(!viewMore);
     };
     const filterMovie = (cat)=>{
         // setCatager(cat)
-        route.push(`/catagory?query=${encodeURIComponent(cat)}`);
+        route.push(`/category?query=${encodeURIComponent(cat)}`);
     };
     (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
         const handleResize = ()=>{
@@ -1233,7 +1294,7 @@ const Catagory = ({ viewAll })=>{
                                             children: cat.icon
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/Catagory.tsx",
-                                            lineNumber: 81,
+                                            lineNumber: 87,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
@@ -1242,13 +1303,13 @@ const Catagory = ({ viewAll })=>{
                                             children: cat.title
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/Catagory.tsx",
-                                            lineNumber: 82,
+                                            lineNumber: 88,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/app/components/Catagory.tsx",
-                                    lineNumber: 80,
+                                    lineNumber: 86,
                                     columnNumber: 29
                                 }, this)),
                             viewAll && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
@@ -1257,13 +1318,13 @@ const Catagory = ({ viewAll })=>{
                                 children: "See All"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Catagory.tsx",
-                                lineNumber: 85,
+                                lineNumber: 91,
                                 columnNumber: 37
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Catagory.tsx",
-                        lineNumber: 77,
+                        lineNumber: 83,
                         columnNumber: 21
                     }, this)
                 }, void 0, false) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
@@ -1278,7 +1339,7 @@ const Catagory = ({ viewAll })=>{
                                             children: cat.icon
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/Catagory.tsx",
-                                            lineNumber: 97,
+                                            lineNumber: 103,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
@@ -1287,13 +1348,13 @@ const Catagory = ({ viewAll })=>{
                                             children: cat.title
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/Catagory.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 104,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/app/components/Catagory.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 101,
                                     columnNumber: 29
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1305,24 +1366,24 @@ const Catagory = ({ viewAll })=>{
                                 width: 50
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Catagory.tsx",
-                                lineNumber: 102,
+                                lineNumber: 108,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Catagory.tsx",
-                        lineNumber: 91,
+                        lineNumber: 97,
                         columnNumber: 21
                     }, this)
                 }, void 0, false)
             }, void 0, false, {
                 fileName: "[project]/app/components/Catagory.tsx",
-                lineNumber: 72,
+                lineNumber: 78,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$MoviePage$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/components/Catagory.tsx",
-                lineNumber: 111,
+                lineNumber: 117,
                 columnNumber: 13
             }, this)
         ]
