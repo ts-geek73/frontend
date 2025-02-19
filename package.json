@@ -1,0 +1,66 @@
+{
+  "name": "movie-explo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": " next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "server": "nodemon --exec node --loader ts-node/esm app/api/app.ts"
+  },
+  "dependencies": {
+    "arg": "^5.0.2",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.0",
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^19.0.0",
+    "react-model": "^4.3.1",
+    "react-toastify": "^11.0.3"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/estree": "^1.0.6",
+    "@types/express": "^5.0.0",
+    "@types/json-schema": "^7.0.15",
+    "@types/mongoose": "^5.11.96",
+    "@types/next": "^8.0.7",
+    "@types/node": "^20.17.19",
+    "@types/node-fetch": "^2.6.12",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19",
+    "@types/source-list-map": "^0.1.6",
+    "@types/uglify-js": "^3.17.5",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-sources": "^3.2.3",
+    "concurrently": "^9.1.2",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "nodemon": "^3.1.9",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kushal-modi/Movie-Explorer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kushal-modi/Movie-Explorer/issues"
+  },
+  "homepage": "https://github.com/kushal-modi/Movie-Explorer#readme"
+}

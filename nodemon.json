@@ -1,0 +1,7 @@
+{
+    "execMap": {
+      "ts": "ts-node",
+      "exec": "ts-node ./app.ts"
+    }
+  }
+  

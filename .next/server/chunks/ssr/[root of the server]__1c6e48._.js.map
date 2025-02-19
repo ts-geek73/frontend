@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///home/techstaunch/Next.js%26React/movie-explo/frontend/pages/_app.tsx"],"sourcesContent":["import { AppProps } from 'next/app';\nimport './../app/globals.css'; \n\nconst MyApp = ({ Component, pageProps }: AppProps) => {\n  \n  return (\n    <>\n      <Component {...pageProps} />\n    </>\n  );\n}\n\nexport default MyApp;\n"],"names":[],"mappings":";;;;;;AAGA,MAAM,QAAQ,CAAC,EAAE,SAAS,EAAE,SAAS,EAAY;IAE/C,qBACE;kBACE,cAAA,qKAAC;YAAW,GAAG,SAAS;;;;;;;AAG9B;uCAEe"}},
+    {"offset": {"line": 33, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
