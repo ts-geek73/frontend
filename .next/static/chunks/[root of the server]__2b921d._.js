@@ -1423,10 +1423,12 @@ __turbopack_esm__({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/index.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react-toastify/dist/index.mjs [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/axios/lib/axios.js [client] (ecmascript)");
 ;
 var _s = __turbopack_refresh__.signature();
 'use client';
+;
 ;
 ;
 const CreateCategory = ()=>{
@@ -1446,7 +1448,7 @@ const CreateCategory = ()=>{
         try {
             const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].post("http://localhost:8000/category", category);
             if (response.status === 200) {
-                setSuccess("Category created successfully!");
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].success("Category created successfully!");
                 setError(null);
                 setCategory({
                     title: "",
@@ -1458,14 +1460,14 @@ const CreateCategory = ()=>{
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "container mx-auto p-4",
+        className: "w-1/4 flex flex-col  h-3/4 justify-center  p-5 mx-auto ",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                 className: "text-2xl font-semibold text-center",
                 children: "Create Category"
             }, void 0, false, {
                 fileName: "[project]/app/components/User/createCategory.tsx",
-                lineNumber: 45,
+                lineNumber: 46,
                 columnNumber: 7
             }, this),
             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1475,14 +1477,6 @@ const CreateCategory = ()=>{
                 fileName: "[project]/app/components/User/createCategory.tsx",
                 lineNumber: 48,
                 columnNumber: 17
-            }, this),
-            success && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "text-green-500",
-                children: success
-            }, void 0, false, {
-                fileName: "[project]/app/components/User/createCategory.tsx",
-                lineNumber: 49,
-                columnNumber: 19
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                 onSubmit: handleSubmit,
@@ -1497,7 +1491,7 @@ const CreateCategory = ()=>{
                                 children: "Category Title"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/User/createCategory.tsx",
-                                lineNumber: 53,
+                                lineNumber: 52,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1514,13 +1508,13 @@ const CreateCategory = ()=>{
                                 required: true
                             }, void 0, false, {
                                 fileName: "[project]/app/components/User/createCategory.tsx",
-                                lineNumber: 56,
+                                lineNumber: 55,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/User/createCategory.tsx",
-                        lineNumber: 52,
+                        lineNumber: 51,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1532,7 +1526,7 @@ const CreateCategory = ()=>{
                                 children: "Category Icon"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/User/createCategory.tsx",
-                                lineNumber: 69,
+                                lineNumber: 68,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1549,13 +1543,13 @@ const CreateCategory = ()=>{
                                 required: true
                             }, void 0, false, {
                                 fileName: "[project]/app/components/User/createCategory.tsx",
-                                lineNumber: 72,
+                                lineNumber: 71,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/User/createCategory.tsx",
-                        lineNumber: 68,
+                        lineNumber: 67,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1564,19 +1558,24 @@ const CreateCategory = ()=>{
                         children: "Create Category"
                     }, void 0, false, {
                         fileName: "[project]/app/components/User/createCategory.tsx",
-                        lineNumber: 84,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/User/createCategory.tsx",
-                lineNumber: 51,
+                lineNumber: 50,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["ToastContainer"], {}, void 0, false, {
+                fileName: "[project]/app/components/User/createCategory.tsx",
+                lineNumber: 90,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/User/createCategory.tsx",
-        lineNumber: 44,
+        lineNumber: 45,
         columnNumber: 5
     }, this);
 };
@@ -1602,93 +1601,122 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$ind
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$User$2f$createmovie$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/app/components/User/createmovie.tsx [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$User$2f$updatemovie$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/app/components/User/updatemovie.tsx [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$User$2f$createCategory$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/app/components/User/createCategory.tsx [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/navigation.js [client] (ecmascript)");
 ;
 var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
 ;
+;
 const AdminPage = ()=>{
     _s();
+    const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    //  const [user, setUser] = useState<User | null>(null);
+    const route = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const [activeComponent, setActiveComponent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])("create");
-    const handleSidebarClick = (eve)=>{
-        // console.log(eve.currentTarget.id);
-        setActiveComponent(eve.currentTarget.id);
+    // let userData = localStorage.getItem("user");
+    // if (userData) {
+    //   const userDatas = JSON.parse(userData);
+    //   console.log(userDatas.isAdmin);
+    //   if(!userDatas.isAdmin){
+    //     route.push('/unauthorized')
+    //   }
+    // }
+    if ("TURBOPACK compile-time truthy", 1) {
+        const userData = localStorage.getItem("user");
+        if (userData) {
+            const user = JSON.parse(userData);
+            if (!user.isAdmin) {
+                route.push("/unauthorized");
+            }
+        }
+    }
+    const sidebarItems = [
+        {
+            id: "create",
+            label: "Create Movie"
+        },
+        {
+            id: "upgrade",
+            label: "Upgrade Movie"
+        },
+        {
+            id: "category",
+            label: "Category Movie"
+        }
+    ];
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "AdminPage.useEffect": ()=>{
+            const timer = setTimeout({
+                "AdminPage.useEffect.timer": ()=>{
+                    setIsLoading(false);
+                }
+            }["AdminPage.useEffect.timer"], 1000);
+            return ({
+                "AdminPage.useEffect": ()=>clearTimeout(timer)
+            })["AdminPage.useEffect"];
+        }
+    }["AdminPage.useEffect"]);
+    const handleSidebarClick = (id)=>{
+        setActiveComponent(id);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex h-screen",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-blue-400 w-1/6 p-4 text-white text-center text-2xl flex flex-col gap-y-10 justify-center",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        id: "create",
-                        onClick: handleSidebarClick,
-                        className: "cursor-pointer mb-4",
-                        children: "Create Movie"
-                    }, void 0, false, {
+                className: "bg-blue-500 w-1/6 p-4 text-white text-center text-2xl flex flex-col gap-y-10 justify-center",
+                children: sidebarItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        id: item.id,
+                        onClick: ()=>handleSidebarClick(item.id),
+                        className: `cursor-pointer mb-4 py-2 px-4 rounded-md transition-colors ${activeComponent === item.id ? "bg-blue-600" : " "}`,
+                        children: item.label
+                    }, item.id, false, {
                         fileName: "[project]/pages/admin/index.tsx",
-                        lineNumber: 18,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        id: "upgrade",
-                        onClick: handleSidebarClick,
-                        className: "cursor-pointer mb-4",
-                        children: "Upgrade Movie"
-                    }, void 0, false, {
-                        fileName: "[project]/pages/admin/index.tsx",
-                        lineNumber: 25,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        id: "category",
-                        onClick: handleSidebarClick,
-                        className: "cursor-pointer mb-4",
-                        children: "Category Movie"
-                    }, void 0, false, {
-                        fileName: "[project]/pages/admin/index.tsx",
-                        lineNumber: 32,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
+                        lineNumber: 63,
+                        columnNumber: 11
+                    }, this))
+            }, void 0, false, {
                 fileName: "[project]/pages/admin/index.tsx",
-                lineNumber: 17,
+                lineNumber: 61,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex-1 p-8",
+                className: "flex-1",
                 children: [
                     activeComponent === "create" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$User$2f$createmovie$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/pages/admin/index.tsx",
-                        lineNumber: 43,
+                        lineNumber: 77,
                         columnNumber: 42
                     }, this),
                     activeComponent === "upgrade" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$User$2f$updatemovie$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/pages/admin/index.tsx",
-                        lineNumber: 44,
+                        lineNumber: 78,
                         columnNumber: 43
                     }, this),
                     activeComponent === "category" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$User$2f$createCategory$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/pages/admin/index.tsx",
-                        lineNumber: 45,
+                        lineNumber: 79,
                         columnNumber: 44
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/admin/index.tsx",
-                lineNumber: 42,
+                lineNumber: 76,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/pages/admin/index.tsx",
-        lineNumber: 15,
+        lineNumber: 60,
         columnNumber: 5
     }, this);
 };
-_s(AdminPage, "mXR0hKWmOU2IPUV32RCfl6bQJ+A=");
+_s(AdminPage, "mUEUxFQy2LInhO1HzEcjzOttWHA=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"]
+    ];
+});
 _c = AdminPage;
 const __TURBOPACK__default__export__ = AdminPage;
 var _c;

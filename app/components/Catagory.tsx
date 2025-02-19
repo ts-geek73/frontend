@@ -6,7 +6,9 @@ import { useEffect, useState } from 'react';
 import MoviePage from './MoviePage';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+// import { query } from 'express';
 // import React from 'react';
+ 
 
 
 interface viewAllInterFace{
@@ -24,20 +26,22 @@ const Catagory: React.FC<viewAllInterFace> = ({ viewAll }) => {
     const [categoryLimit, setCategoryLimit] = useState<number>(11);
     const [categories, setCategories] = useState<Category[]>([]); // Initialize as empty array
     const route = useRouter();
+    const url = process.env.NEXT_PUBLIC_BASE_URL;
 
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/category');
+                
+                const response = await axios.get(`${url}/category`);
                 setCategories(response.data);
             } catch (error) {
                 console.error("Error fetching categories:", error);
-                // Handle the error (e.g., display an error message)
+                
             }
         };
 
-        fetchCategories(); // Call the function to fetch data
-    }, []); 
+        fetchCategories(); 
+    }, [url]); 
 
     const viewMoreFun = ()=>{
         setViewMore(!viewMore)
@@ -45,7 +49,9 @@ const Catagory: React.FC<viewAllInterFace> = ({ viewAll }) => {
 
     const filterMovie = (cat:string)=>{
         // setCatager(cat)
-        route.push(`/catagory?query=${encodeURIComponent(cat)}`);
+        route.push(`/category?query=${encodeURIComponent(cat)}`);
+
+
 
     }
 

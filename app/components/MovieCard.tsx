@@ -66,7 +66,7 @@ const MovieCard: React.FC<{ data: MovieData }> = ({ data }) => {
 
     fetchCategoryTitles();
     fetchFavirates();
-  }, [categories, ]);
+  }, [categories, movie_id]);
 
   const CardClickFun = (id: number) => {
     route.push(`movie/${id}`);

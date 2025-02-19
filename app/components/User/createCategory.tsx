@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 type category = {
   title: string;
@@ -30,7 +31,7 @@ const CreateCategory: React.FC = () => {
 
 
       if (response.status === 200) {
-        setSuccess("Category created successfully!");
+        toast.success("Category created successfully!");
         setError(null); 
         setCategory({ title: "", icon: "" }); 
       }
@@ -41,12 +42,10 @@ const CreateCategory: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="w-1/4 flex flex-col  h-3/4 justify-center  p-5 mx-auto ">
       <h1 className="text-2xl font-semibold text-center">Create Category</h1>
 
-      {/* Display success or error message */}
       {error && <p className="text-red-500">{error}</p>}
-      {success && <p className="text-green-500">{success}</p>}
 
       <form onSubmit={handleSubmit} className="mt-4">
         <div className="mb-4">
@@ -88,6 +87,7 @@ const CreateCategory: React.FC = () => {
           Create Category
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { set } from "mongoose";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
@@ -47,7 +48,7 @@ const RegisterPage: React.FC = () => {
     }
   
     try {
-      console.log("pass1");
+      // console.log("pass1");
   
       const response = await axios.post("http://localhost:8000/register", formData, {
         headers: {
@@ -61,7 +62,7 @@ const RegisterPage: React.FC = () => {
         setError("Email exists, use another email");
       } else if (response.status === 200) {
         
-        // toast.success("User created successfully!");
+        toast.success("User created successfully!");
         setError("");
         setFormData({
           name: "",
@@ -200,9 +201,10 @@ const RegisterPage: React.FC = () => {
           </div>
 
           <div className="flex justify-between items-center">
-            <a href="/" className="text-sm text-blue-600 hover:text-blue-800">
-              Already have an account? Login
-            </a>
+          <Link href="/" className="text-sm text-blue-600 hover:text-blue-800">
+            Already have an account? Login
+          </Link>
+          
             <button
               type="submit"
               className="w-full mt-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"

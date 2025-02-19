@@ -1,4 +1,5 @@
 import axios, { AxiosError } from "axios";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
@@ -43,16 +44,35 @@ const LoginPage: React.FC = () => {
       } else if (response.status === 400) {
         setError("User not found");
       } else if (response.status === 200) {
-        toast.success("Login SuccessFull");
+        localStorage.setItem("user", JSON.stringify(response.data));
+
+        toast.success("Login Successfully");
         setError("");
-        setTimeout(() => {
-          router.push("/user"); 
-        }, 2000);
+
+        if (response.data.isAdmin) {
+          setTimeout(() => {
+            toast("Redirecting to Admin Page");
+            // router.push("/admin");
+          }, 1000);
+          setTimeout(() => {
+            router.push("/admin");
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            toast("Redirecting to User Page");
+            // router.push("/user");
+          }, 1000);
+          setTimeout(() => {
+            router.push("/user");
+          }, 2000);
+        }
       }
     } catch (err) {
-      setError(err.response.data);
-      
-      
+      if (axios.isAxiosError(err) && err.response) {
+        setError(err.response.data);
+      } else {
+        setError("An unexpected error occurred");
+      }
     }
   };
 
@@ -153,12 +173,12 @@ const LoginPage: React.FC = () => {
           </div> */}
 
           <div className="flex justify-between items-center">
-            <a
-              href="/register"
-              className="text-sm text-blue-600 hover:text-blue-800"
-            >
-              Don't have an account? Register
-            </a>
+          <Link href="/register" className="text-sm text-blue-600 hover:text-blue-800">
+            Don't have an account? Register
+          </Link>
+
+              
+
             <button
               type="submit"
               className="w-full mt-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"

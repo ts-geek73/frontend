@@ -1,6 +1,6 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 // import movies from '@/app/constants/movies.json'
 // import catagory from '@/app/constants/catagory.json'
 import { useEffect, useState } from 'react';
@@ -35,6 +35,17 @@ const Search = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>('All'); // Default to 'All'
     const [movies, setMovies] = useState<Movie[]>([]);
     const [categories, setCategories] = useState<Category[]>([]);
+
+      const route = useRouter();
+      if (typeof window !== "undefined") {
+        const userData = localStorage.getItem("user");
+        if (userData) {
+          const user = JSON.parse(userData);
+          if (user.isAdmin) {
+            route.push("/unauthorized");
+          }
+        }
+      }
 
 
     const searchParams = useSearchParams();
